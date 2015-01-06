@@ -27,6 +27,7 @@
     "load-grunt-tasks": "^1.0.0"
   },
   "scripts": {
-    "test" : "karma start test/karma.conf.js --single-run --bvrowsers Chrome"
+    "test" : "karma start test/karma.conf.js --single-run --bvrowsers Chrome",
+    "build": "grunt build"
   }
 }
