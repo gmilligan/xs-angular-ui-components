@@ -10,7 +10,7 @@
 (function (window, angular) { 'use strict';
 
   angular
-    .module('xs.ui.select', [])
+    .module('xs.ui.select.placeholder', [])
     .directive('select', function($interpolate) {
       return {
         restrict: 'E',

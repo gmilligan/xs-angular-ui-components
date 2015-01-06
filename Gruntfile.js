@@ -42,7 +42,7 @@ module.exports = function(grunt) {  "use strict";
         dest: 'dist/xs-ui-date-translate.min.js'
       },
       select: {
-        src: 'src/xs-ui-select-placeholder.js',
+        src: ['src/xs-ui-select-placeholder.js'],
         dest: 'dist/xs-ui-select-placeholder.min.js'
       },
       packaged: {
@@ -68,20 +68,17 @@ module.exports = function(grunt) {  "use strict";
     },
     copy: {
       main: {
-        files: [
-          {
-            src: ['src/xs-ui-components.js',
-              'src/xs-ui-date-translate.js',
-              'src/xs-ui-select-placeholder.js'
-            ],
-            dest:[]
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: 'src/',
+          src: ['**'],
+          dest: 'dist/'
+        }]
       }
     }
   });
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('build', ['jshint', 'clean', 'concat', 'uglify']);
+  grunt.registerTask('build', ['jshint', 'clean', 'concat', 'uglify', 'copy']);
 
 
 };
